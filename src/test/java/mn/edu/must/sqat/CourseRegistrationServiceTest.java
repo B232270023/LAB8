@@ -2,6 +2,7 @@ package mn.edu.must.sqat;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
+import static org.junit.jupiter.api.Assertions.assertTrue;
 import static org.mockito.ArgumentMatchers.anyString;
 import static org.mockito.ArgumentMatchers.contains;
 import static org.mockito.ArgumentMatchers.eq;
@@ -13,14 +14,12 @@ import static org.mockito.Mockito.verifyNoInteractions;
 import static org.mockito.Mockito.when;
 
 import java.util.List;
-import java.util.stream.Stream;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.CsvSource;
 import org.mockito.ArgumentCaptor;
-import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
 
@@ -114,7 +113,7 @@ class CourseRegistrationServiceTest {
         assertEquals("OK", service.register("S001", "CS201"));
 
         verify(emailSender).send(eq("student@example.edu"), eq("Бүртгэл баталгаажлаа"), bodyCaptor.capture());
-        assertEquals(true, bodyCaptor.getValue().contains("CS201"));
+        assertTrue(bodyCaptor.getValue().contains("CS201"));
     }
 
     @ParameterizedTest(name = "{0} returns {1}")
