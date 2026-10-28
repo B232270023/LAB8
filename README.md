@@ -1,5 +1,11 @@
 # Lab 08 — Mockito mock объектууд
 
+[![Maven tests](https://github.com/B232270023/LAB8/actions/workflows/test.yml/badge.svg?branch=main)](https://github.com/B232270023/LAB8/actions/workflows/test.yml)
+
+## Автомат CI
+
+GitHub Actions дахь `Maven tests` workflow нь `main` руу push хийх болон `main` руу чиглэсэн pull request бүрд Maven тестийг ажиллуулна. Ажлын орчин Temurin Java 17 ашиглаж, `mvn --batch-mode --no-transfer-progress test` командаар тестүүдийг ажиллуулдаг. Дээрх badge нь сүүлийн CI үр дүнг харуулна.
+
 ## Оюутан ба ажиллуулах орчин
 
 - Нэр: О.Шинэбаяр
